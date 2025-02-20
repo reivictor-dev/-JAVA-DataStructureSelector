@@ -1,4 +1,5 @@
 
+import binarytree.BinaryTreeController;
 import java.util.ArrayList;
 import java.util.Scanner;
 import linkedlist.Elementus;
@@ -370,6 +371,49 @@ public class StructureSelect {
                                         System.out.println("Your number is on index " + i + " on the position " + pos);
                                         continue;
                                     }
+                                }
+                                
+                            }
+                        }
+
+                        //LinkedList SECTION
+                        case 10 ->{
+                            BinaryTreeController btc = new BinaryTreeController();
+                            boolean btcSecVerify = true;
+                            
+
+                            while (btcSecVerify) {
+                                System.out.println("=======HashTable options======");
+                                System.out.println("0 - Back to previous menu");
+                                System.out.println("1 - Insert your previous numbers in a Binary Tree");
+                                System.out.println("2 - Insert a number");
+                                System.out.println("3 - Print the complete HashTable");
+                                System.out.println("4 - Delete a number");
+                                System.out.println("5 - Get number position");
+
+        
+                                int arrOpt = scn.nextInt();
+
+                                switch (arrOpt) {
+                                    case 0 -> btcSecVerify = false;
+
+                                    case 1 -> {
+                                        btc.insertPreviousNumbers(userNumbers);
+                                        continue;
+                                    }
+
+                                    case 2 -> {
+                                        System.out.println("Tap the number you want to insert:");
+                                        int numToInsert = scn.nextInt();
+                                        btc.insert(numToInsert);
+                                        continue;
+                                    }
+
+                                    case 3 -> {
+                                        btc.printInOrder();
+                                    }
+
+                                    
                                 }
                                 
                             }
