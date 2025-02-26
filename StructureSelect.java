@@ -28,6 +28,8 @@ public class StructureSelect {
                 System.out.println("7 - Queue options");
                 System.out.println("8 - LinkedList options");
                 System.out.println("9 - HashTable options");
+                System.out.println("10 - BinaryTree options");
+
 
 
                 System.out.println("99 - Fulfill the array");
@@ -376,21 +378,21 @@ public class StructureSelect {
                             }
                         }
 
-                        //LinkedList SECTION
+                        //BinaryTree SECTION
                         case 10 ->{
                             BinaryTreeController btc = new BinaryTreeController();
                             boolean btcSecVerify = true;
                             
 
                             while (btcSecVerify) {
-                                System.out.println("=======HashTable options======");
+                                System.out.println("=======BinaryTree options======");
                                 System.out.println("0 - Back to previous menu");
                                 System.out.println("1 - Insert your previous numbers in a Binary Tree");
                                 System.out.println("2 - Insert a number");
-                                System.out.println("3 - Print the complete HashTable");
-                                System.out.println("4 - Delete a number");
-                                System.out.println("5 - Get number position");
-
+                                System.out.println("3 - Print the Tree");
+                                System.out.println("4 - Print the Tree in Ascending Order");
+                                System.out.println("5 - Print the Tree in Descending Order");
+                                System.out.println("6 - Remove a node");
         
                                 int arrOpt = scn.nextInt();
 
@@ -410,9 +412,24 @@ public class StructureSelect {
                                     }
 
                                     case 3 -> {
-                                        btc.printInOrder();
+                                        btc.printTree();
                                     }
 
+                                    case 4 -> {
+                                        btc.printTreeInAscendingOrder();
+                                    }
+
+                                    case 5 -> {
+                                        btc.printTreeInDescendingOrder();
+                                    }
+
+                                    case 6 -> {
+                                        System.out.println("Tap the number you want to delete:");
+                                        int numToDel = scn.nextInt();
+                                        
+                                        btc.deleteANode(numToDel);
+
+                                    }
                                     
                                 }
                                 
@@ -420,8 +437,8 @@ public class StructureSelect {
                         }
 
                     case 99 -> {
-                        int[] arrF = new int[]{23,28,32,34,45,48,50,15,1548,122,145,198,178,148,158,133,2669,1574};
-    
+                        int[] arrF = new int[]{158,133,2669, 48,50,15,1548,122,145,23,28,32,34,45,198,178,148,1574};
+                        
                         for (int ff : arrF) {
                             userNumbers.add(ff);
                         }
